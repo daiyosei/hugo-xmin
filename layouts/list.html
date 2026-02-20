@@ -4,6 +4,7 @@
 <h1>{{ .Title | markdownify }}</h1>
 {{ end }}
 
+<main>
 {{ .Content }}
 
 {{ if not .IsHome }}
@@ -32,5 +33,6 @@
   <a href="/posts/">Show more...</a>
 </ul>
 {{ end }}
+</main>
 
 {{ partial "footer.html" . }}

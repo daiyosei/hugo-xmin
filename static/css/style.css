@@ -1,10 +1,10 @@
 :root {
   --accent-color: #faaae6;
-  --background-color: #3d0101;
+  --background-color: #420101;
   --text-color: #faaae6;
   --surface-color: rgba(250, 170, 230, 0.12);
   --border-color: rgba(250, 170, 230, 0.45);
-  --code-background-color: #000000;
+  --code-background-color: #2a0d0d;
 }
 
 body {
@@ -98,7 +98,11 @@ main {
     font-size: 1.25rem;
 }
 
-/* Keep code blocks at the old visual size even when main text is larger. */
+h1, h2, h3, h4, h5, h6 {
+  hyphens: none;
+  overflow-wrap: anywhere;
+}
+
 main pre,
 main pre code {
   font-size: 0.85rem;
