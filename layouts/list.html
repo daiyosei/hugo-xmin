@@ -21,6 +21,7 @@
 {{ end }}
 
 {{ if .IsHome }}
+<h3>Recent Posts</h3>
 <ul>
   {{ $pages := .Pages }}
   {{ if .IsHome }}{{ $pages = .Site.RegularPages }}{{ end }}
@@ -33,6 +34,25 @@
   <a href="/posts/">Show more...</a>
 </ul>
 {{ end }}
+ <section id="webring">
+    <h3>Cool people!</h3>
+    <div class="webring-links" id="webring-links"></div>
+    <p id="jsWarn">Failed to fetch webring. Javascript disabled?</p>
+  </section>
+  <script>
+    fetch("https://ring.seggs.lol/webring")
+      .then(r => r.json())
+      .then(sites => {
+        const container = document.getElementById("webring-links");
+        container.innerHTML = sites.filter(s => s.name !== "theindiandev").map(s =>
+          `<a href="${s.url}" target="_blank" rel="noopener">${s.name.toLowerCase()}<\/a>`
+        ).join(" · ");
+	document.getElementById("jsWarn").style.display = "none";
+      })
+      .catch(() => {
+         document.getElementById("jsWarn").textContent = "Failed to fetch webring. No internet? Unable to reach webring server.";
+      });
+  </script>
 </main>
 
 {{ partial "footer.html" . }}
