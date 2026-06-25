@@ -66,7 +66,7 @@
       .then(sites => {
         const container = document.getElementById("webring-links");
         container.innerHTML = sites.filter(s => s.name !== "theindiandev").map(s =>
-          `<a href="${s.url}" target="_blank" rel="noopener">${s.name.toLowerCase()}<\/a>`
+          `<a href="${s.website}" target="_blank" rel="noopener">${s.name.toLowerCase()}<\/a>`
         ).join(" · ");
 	document.getElementById("jsWarn").style.display = "none";
       })
