@@ -8,7 +8,7 @@
 }
 
 body {
-  max-width: 900px;
+  max-width: 1000px;
   margin: auto;
   padding: 1em;
   line-height: 1.5;
@@ -93,8 +93,8 @@ pre code {
 
 /* misc elements */
 img, iframe, video { max-width: 100%; }
-main { 
-    hyphens: auto; 
+main {
+    hyphens: auto;
     font-size: 1.25rem;
 }
 
@@ -177,3 +177,30 @@ display: none;
   padding: 0.1rem 0.4rem;
 }
 
+.intro-box {
+    display: flex;
+}
+
+.saraswati-image {
+    width: 800px;
+}
+
+.saraswati-footnotes {
+    font-size: 0.85em;
+}
+
+@media (max-width: 768px) {
+    .intro-box {
+        flex-direction: column;
+    }
+    .saraswati-image {
+        width: 30vw;
+        padding-right: 20px;
+    }
+    .saraswati-footnotes {
+        font-size: 1.2em;
+    }
+    .saraswati-box {
+        display: flex;
+    }
+}
